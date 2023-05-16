@@ -1,5 +1,5 @@
 resource "kubernetes_config_map" "aws_auth" {
-  depends_on = [module.aws_eks]
+  depends_on = [module.aws_eks.cluster_id]
   count = var.create_eks ? 1 : 0
 
   metadata {
